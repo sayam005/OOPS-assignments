@@ -214,3 +214,51 @@ original unchanged: 5
 pass by address result: 10
 original changed: 10
 ```
+
+assignment 4 is in [assignment4.cpp](assignment4.cpp)
+
+all 4 programs are in the same file, separated by comments (Q1 through Q4). run the file and enter a question number from 1 to 4.
+
+Q1 - rectangle class with three constructors (no param, two param, one param)
+output:
+```
+no parameter: area = 0
+two parameters: area = 15
+one parameter: area = 16
+```
+
+Q2 - array of rect objects using default argument constructor and destructor
+output:
+```
+rect 1 area = 1
+rect 2 area = 15
+rect 3 area = 16
+destructor called for rect  (fires 6 times as objects go out of scope)
+```
+
+Q3 - destructor demonstration showing constructor/destructor call order
+output:
+```
+creating object d1
+constructor called
+creating object d2
+constructor called
+end of q3 scope, destructors will fire
+destructor called
+destructor called
+```
+
+Q4 - dynamic memory allocation using new and delete for int, float, int array, float array, class object, array of objects
+output:
+```
+dynamic int: 10
+dynamic float: 3.14
+dynamic int array: 1 2 3 4 5
+dynamic float array: 1.1 2.2 3.3
+sample constructor called
+dynamic object x: 42
+sample destructor called
+sample constructor called (x2 for array)
+dynamic array of objects: 1 2
+sample destructor called (x2)
+```
