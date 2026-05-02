@@ -233,7 +233,7 @@ output:
 rect 1 area = 1
 rect 2 area = 15
 rect 3 area = 16
-destructor called for rect  (fires 6 times as objects go out of scope)
+destructor called for rect (fires multiple times as objects go out of scope)
 ```
 
 Q3 - destructor demonstration showing constructor/destructor call order
@@ -248,7 +248,7 @@ destructor called
 destructor called
 ```
 
-Q4 - dynamic memory allocation using new and delete for int, float, int array, float array, class object, array of objects
+Q4 - dynamic memory allocation using new and delete
 output:
 ```
 dynamic int: 10
@@ -258,7 +258,104 @@ dynamic float array: 1.1 2.2 3.3
 sample constructor called
 dynamic object x: 42
 sample destructor called
-sample constructor called (x2 for array)
+sample constructor called (x2)
 dynamic array of objects: 1 2
 sample destructor called (x2)
+```
+
+assignment 5 is in [assignment5.cpp](assignment5.cpp)
+
+all 10 programs are in the same file, separated by comments (Q1 through Q10). run the file and enter a question number from 1 to 10.
+
+Q1 - simple base and derived class
+output:
+```
+animal makes a sound
+animal makes a sound
+dog barks
+```
+
+Q2 - protected access specifier in inheritance
+output:
+```
+protected x from base: 42
+```
+
+Q3 - public, protected, and private inheritance modes
+output:
+```
+public inheritance
+pub accessible: 1
+prot accessible: 2
+protected inheritance
+pub now protected: 1
+prot still protected: 2
+private inheritance
+pub now private: 1
+prot now private: 2
+```
+
+Q4 - all five types of inheritance (single, multiple, hierarchical, multilevel, hybrid)
+output shows class names for each type being accessed through inheritance chain
+
+Q5 - constructors and destructors in inheritance
+output:
+```
+creating derived object:
+base constructor
+derived constructor
+going out of scope:
+derived destructor
+base destructor
+```
+
+Q6 - Book base class and Textbook derived class
+output:
+```
+book details:
+title: Novel
+author: AuthorA
+price: 299
+textbook details:
+title: Physics
+author: AuthorB
+price: 499
+subject: Science
+```
+
+Q7 - car dashboard using multiple inheritance (Speedometer, FuelGauge, Thermometer)
+output:
+```
+--- car dashboard ---
+speed: 80 kmph
+fuel: 60%
+temperature: 90C
+```
+
+Q8 - library user system using hierarchical inheritance
+output:
+```
+student:
+name: Sayam id: 1 contact: 9999999999
+grade: A
+teacher:
+name: Mr.Sharma id: 2 contact: 8888888888
+department: CS
+```
+
+Q9 - vehicle fleet using multilevel inheritance (Vehicle -> Truck -> RefrigeratedTruck)
+output:
+```
+make: Volvo model: FH year: 2022
+load capacity: 20.5 tons
+temp control: -18C
+```
+
+Q10 - academic system using hybrid inheritance with virtual base class
+output:
+```
+teaching assistant details:
+name: Rahul address: Delhi
+empid: 101 dept: CS
+studentid: 201 grade: A
 ```
