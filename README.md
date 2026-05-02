@@ -154,3 +154,63 @@ second namespace val = 20
 first val = 10
 second val = 20
 ```
+
+assignment 3 is in [assignment3.cpp](assignment3.cpp)
+
+all 7 programs are in the same file, separated by comments (Q1 through Q7). run the file and enter a question number from 1 to 7.
+
+Q1 - pointer to object and this pointer using dot and arrow operators
+sample output:
+```
+dot operator: 10
+arrow operator: 10
+this pointer address: 0x....
+length via this: 10
+```
+
+Q2 - swap private values of two classes using friend function
+output:
+```
+before swap
+ClassA val: 5
+ClassB val: 10
+after swap
+ClassA val: 10
+ClassB val: 5
+```
+
+Q3 - add data objects of two different classes using friend function
+output:
+```
+sum = 40
+```
+
+Q4 - friend class demonstration
+output:
+```
+engine horsepower: 200
+```
+
+Q5 - array of objects to display area of multiple rectangles
+sample input: 2 rectangles, (5,3) and (4,6)
+output:
+```
+rectangle 1 area = 15
+rectangle 2 area = 24
+```
+
+Q6 - inline function cube()
+sample input: 3
+output:
+```
+cube = 27
+```
+
+Q7 - pass object by value and by address
+output:
+```
+pass by value result: 10
+original unchanged: 5
+pass by address result: 10
+original changed: 10
+```
