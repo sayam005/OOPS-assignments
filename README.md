@@ -97,3 +97,60 @@ output:
 Odd (if-else)
 Odd (conditional operator)
 ```
+
+assignment 2 is in [assignment2.cpp](assignment2.cpp)
+
+all 7 programs are in the same file, separated by comments (Q1 through Q7). run the file and enter a question number from 1 to 7.
+
+Q1 - student structure with addDetails, updateDetails, updateCGPA, updateHostel, displaydetails
+sample input: Sayam 101 BTech LH4 8.5
+output:
+```
+Name: Sayam
+Roll No: 101
+Degree: BTech
+Hostel: LH4
+CGPA: 8.5
+```
+
+Q2 - same as Q1 but using class with private data members and public functions
+output: same as Q1
+
+Q3 - private function called inside public function
+output:
+```
+inside public function
+private function called
+```
+
+Q4 - rectangle class with getdata and calculatearea
+sample input: width=5, height=3
+output:
+```
+area = 15
+```
+
+Q5 - complex number class with setComplex, displayComplex, and sum of two complex numbers
+sample input: 3 4 then 1 2
+output:
+```
+sum = 4+6i
+```
+
+Q6 - scope resolution operator for class functions outside class, global vs local variable, static variable, inbuilt library
+output:
+```
+local x = 10
+global x = 100
+static count = 5
+using scope resolution with cout
+```
+
+Q7 - namespace with same variable and function names in different namespaces
+output:
+```
+first namespace val = 10
+second namespace val = 20
+first val = 10
+second val = 20
+```
