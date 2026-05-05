@@ -1,285 +1,116 @@
+// Name: Sayam Batra
+// Roll No: 1024150252
+// Batch: 2O33
+
 #include<iostream>
 #include<string>
 using namespace std;
 
 //Q1
-struct Student
-{
-string name;
-int rollno;
-string degree;
-string hostel;
-float cgpa;
-
-void addDetails()
-{
-cout<<"enter name: ";
-cin>>name;
-cout<<"enter roll no: ";
-cin>>rollno;
-cout<<"enter degree: ";
-cin>>degree;
-cout<<"enter hostel: ";
-cin>>hostel;
-cout<<"enter cgpa: ";
-cin>>cgpa;
-}
-
-void updateDetails()
-{
-cout<<"enter new name: ";
-cin>>name;
-cout<<"enter new degree: ";
-cin>>degree;
-}
-
-void updateCGPA()
-{
-cout<<"enter new cgpa: ";
-cin>>cgpa;
-}
-
-void updateHostel()
-{
-cout<<"enter new hostel: ";
-cin>>hostel;
-}
-
-void displaydetails()
-{
-cout<<"Name: "<<name<<endl;
-cout<<"Roll No: "<<rollno<<endl;
-cout<<"Degree: "<<degree<<endl;
-cout<<"Hostel: "<<hostel<<endl;
-cout<<"CGPA: "<<cgpa<<endl;
-}
+struct StudentStruct{
+string name; int roll; string degree, hostel; float cgpa;
 };
-
-void q1()
-{
-Student s;
-s.addDetails();
-s.displaydetails();
+void q1(){
+StudentStruct s;
+cout<<"enter name roll degree hostel cgpa: ";
+cin>>s.name>>s.roll>>s.degree>>s.hostel>>s.cgpa;
+cout<<"Name: "<<s.name<<endl;
+cout<<"Roll No: "<<s.roll<<endl;
+cout<<"Degree: "<<s.degree<<endl;
+cout<<"Hostel: "<<s.hostel<<endl;
+cout<<"CGPA: "<<s.cgpa<<endl;
 }
 
 //Q2
-class StudentClass
-{
+class StudentClass{
 private:
-string name;
-int rollno;
-string degree;
-string hostel;
-float cgpa;
-
+string name; int roll; string degree, hostel; float cgpa;
 public:
-void addDetails()
-{
-cout<<"enter name: ";
-cin>>name;
-cout<<"enter roll no: ";
-cin>>rollno;
-cout<<"enter degree: ";
-cin>>degree;
-cout<<"enter hostel: ";
-cin>>hostel;
-cout<<"enter cgpa: ";
-cin>>cgpa;
-}
-
-void updateDetails()
-{
-cout<<"enter new name: ";
-cin>>name;
-cout<<"enter new degree: ";
-cin>>degree;
-}
-
-void updateCGPA()
-{
-cout<<"enter new cgpa: ";
-cin>>cgpa;
-}
-
-void updateHostel()
-{
-cout<<"enter new hostel: ";
-cin>>hostel;
-}
-
-void displaydetails()
-{
+void setData(string n,int r,string d,string h,float c){name=n;roll=r;degree=d;hostel=h;cgpa=c;}
+void display(){
 cout<<"Name: "<<name<<endl;
-cout<<"Roll No: "<<rollno<<endl;
+cout<<"Roll No: "<<roll<<endl;
 cout<<"Degree: "<<degree<<endl;
 cout<<"Hostel: "<<hostel<<endl;
 cout<<"CGPA: "<<cgpa<<endl;
 }
 };
-
-void q2()
-{
+void q2(){
 StudentClass s;
-s.addDetails();
-s.displaydetails();
+string n,d,h; int r; float c;
+cout<<"enter name roll degree hostel cgpa: ";
+cin>>n>>r>>d>>h>>c;
+s.setData(n,r,d,h,c);
+s.display();
 }
 
 //Q3
-class Demo
-{
+class PrivateDemo{
 private:
-void privateFunc()
-{
-cout<<"private function called"<<endl;
-}
-
+void privateFunc(){ cout<<"private function called"<<endl; }
 public:
-void publicFunc()
-{
-cout<<"inside public function"<<endl;
-privateFunc();
-}
+void publicFunc(){ cout<<"inside public function"<<endl; privateFunc(); }
 };
-
-void q3()
-{
-Demo d;
-d.publicFunc();
-}
+void q3(){ PrivateDemo p; p.publicFunc(); }
 
 //Q4
-class Rectangle
-{
-private:
-int width;
-int height;
-
+class Rectangle{
+float l,b;
 public:
-void getdata()
-{
-cout<<"enter width: ";
-cin>>width;
-cout<<"enter height: ";
-cin>>height;
-}
-
-void calculatearea()
-{
-cout<<"area = "<<width*height<<endl;
-}
+void getdata(){ cout<<"enter length and breadth: "; cin>>l>>b; }
+void calculatearea(){ cout<<"area = "<<l*b<<endl; }
 };
-
-void q4()
-{
-Rectangle r;
-r.getdata();
-r.calculatearea();
-}
+void q4(){ Rectangle r; r.getdata(); r.calculatearea(); }
 
 //Q5
-class Complex
-{
+class Complex{
+float real,imag;
 public:
-float real;
-float imag;
-
-void setComplex(float r, float i)
-{
-real = r;
-imag = i;
-}
-
-void displayComplex()
-{
-cout<<real<<"+"<<imag<<"i"<<endl;
-}
-
-Complex addComplex(Complex c)
-{
+void getdata(){ cout<<"enter real and imaginary: "; cin>>real>>imag; }
+void display(){ cout<<real<<"+"<<imag<<"i"<<endl; }
+Complex add(Complex c){
 Complex res;
-res.real = real + c.real;
-res.imag = imag + c.imag;
+res.real=real+c.real;
+res.imag=imag+c.imag;
 return res;
 }
 };
-
-void q5()
-{
-Complex c1, c2, c3;
-float r, i;
-cout<<"enter real and imaginary for first: ";
-cin>>r>>i;
-c1.setComplex(r, i);
-cout<<"enter real and imaginary for second: ";
-cin>>r>>i;
-c2.setComplex(r, i);
-c3 = c1.addComplex(c2);
-cout<<"sum = ";
-c3.displayComplex();
+void q5(){
+Complex c1,c2;
+cout<<"first complex: "; c1.getdata();
+cout<<"second complex: "; c2.getdata();
+Complex c3=c1.add(c2);
+cout<<"sum = "; c3.display();
 }
 
 //Q6
-int x = 100;
-
-class MyClass
-{
-public:
-static int count;
-void show();
-};
-
-int MyClass::count = 0;
-
-void MyClass::show()
-{
-int x = 10;
+int x=100;
+void q6(){
+int x=10;
 cout<<"local x = "<<x<<endl;
 cout<<"global x = "<<::x<<endl;
-cout<<"static count = "<<MyClass::count<<endl;
-::cout<<"using scope resolution with cout"<<::endl;
-}
-
-void q6()
-{
-MyClass obj;
-MyClass::count = 5;
-obj.show();
+static int count=0;
+for(int i=0;i<5;i++) count++;
+cout<<"static count = "<<count<<endl;
+cout<<"using scope resolution with "<<::std::endl;
+::std::cout<<"cout"<<::std::endl;
 }
 
 //Q7
-namespace first
-{
-int val = 10;
-void display()
-{
-cout<<"first namespace val = "<<val<<endl;
-}
-}
-
-namespace second
-{
-int val = 20;
-void display()
-{
-cout<<"second namespace val = "<<val<<endl;
-}
-}
-
-void q7()
-{
-first::display();
-second::display();
-cout<<"first val = "<<first::val<<endl;
+namespace first{ int val=10; }
+namespace second{ int val=20; }
+void q7(){
+cout<<"first namespace val = "<<first::val<<endl;
+cout<<"second namespace val = "<<second::val<<endl;
+using namespace first;
+cout<<"first val = "<<val<<endl;
 cout<<"second val = "<<second::val<<endl;
 }
 
-int main()
-{
+int main(){
 int choice;
-cout<<"enter question number (1-7): ";
-cin>>choice;
-switch(choice)
-{
+cout<<"enter question number (1-7): "; cin>>choice;
+switch(choice){
 case 1: q1(); break;
 case 2: q2(); break;
 case 3: q3(); break;

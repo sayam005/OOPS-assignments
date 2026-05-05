@@ -1,180 +1,102 @@
+// Name: Sayam Batra
+// Roll No: 1024150252
+// Batch: 2O33
+
 #include<iostream>
 #include<iomanip>
 using namespace std;
 
 //Q1
-int q1()
-{
-cout<<"Hello World"<<endl;
-return 0;
-}
+void q1(){ cout<<"Hello World"<<endl; }
 
 //Q2
-int q2()
-{
-int a;
-float b;
-char c;
-cout<<"Enter an integer: ";
-cin>>a;
-cout<<"Enter a decimal: ";
-cin>>b;
-cout<<"Enter a character: ";
-cin>>c;
+void q2(){
+int a; float b; char c;
+cout<<"enter int float char: "; cin>>a>>b>>c;
 cout<<"Integer: "<<a<<endl;
 cout<<"Decimal: "<<b<<endl;
 cout<<"Character: "<<c<<endl;
-return 0;
 }
 
 //Q3
-int q3()
-{
-float a,b;
-cout<<"Enter two numbers: ";
-cin>>a>>b;
+void q3(){
+int a,b; cout<<"enter two numbers: "; cin>>a>>b;
 cout<<"Addition: "<<a+b<<endl;
 cout<<"Subtraction: "<<a-b<<endl;
 cout<<"Multiplication: "<<a*b<<endl;
-cout<<"Division: "<<a/b<<endl;
-return 0;
+if(b!=0) cout<<"Division: "<<a/b<<endl;
+else cout<<"Division by zero"<<endl;
 }
 
 //Q4
-int q4()
-{
-float c,f;
-cout<<"Enter temperature in Celsius: ";
-cin>>c;
-f = 9*c/5+32;
-cout<<"Temperature in Fahrenheit: "<<f<<endl;
-return 0;
+void q4(){
+float c; cout<<"enter celsius: "; cin>>c;
+cout<<"Temperature in Fahrenheit: "<<(c*9/5)+32<<endl;
 }
 
 //Q5
-int q5()
-{
+void q5(){
 cout<<"Hello\tWorld"<<endl;
-cout<<"New\nLine"<<endl;
-cout<<"Back\bspace"<<endl;
+cout<<"New"<<endl<<"Line"<<endl;
+cout<<"Backspace"<<endl;
 cout<<setw(10)<<"Right"<<endl;
 cout<<"Done"<<endl;
-return 0;
 }
 
 //Q6
-int q6()
-{
-int a;
-cout<<"Enter a number: ";
-cin>>a;
-cout<<"Original: "<<a<<endl;
-a+=10;
-cout<<"After +=10: "<<a<<endl;
-a-=5;
-cout<<"After -=5: "<<a<<endl;
-return 0;
+void q6(){
+int x; cout<<"enter a number: "; cin>>x;
+cout<<"Original: "<<x<<endl;
+x+=10; cout<<"After +=10: "<<x<<endl;
+x-=5; cout<<"After -=5: "<<x<<endl;
 }
 
 //Q7
-int q7()
-{
-int a,b;
-cout<<"Enter two numbers: ";
-cin>>a>>b;
+void q7(){
+int a,b; cout<<"enter two numbers: "; cin>>a>>b;
 cout<<"Before swap: a="<<a<<" b="<<b<<endl;
-a=a^b;
-b=a^b;
-a=a^b;
+a=a^b; b=a^b; a=a^b;
 cout<<"After swap: a="<<a<<" b="<<b<<endl;
-return 0;
 }
 
 //Q8
-int q8()
-{
+void q8(){
 int days;
-cout<<"Enter number of days late: ";
-cin>>days;
-if(days>30)
-{
-cout<<"Membership cancelled."<<endl;
+int cases[]={3,8,15,35};
+for(int d : cases){
+if(d<=7) cout<<d<<" days  -> Fine: 50 paise"<<endl;
+else if(d<=14) cout<<d<<" days  -> Fine: 1 rupee"<<endl;
+else if(d<=30) cout<<d<<" days -> Fine: 5 rupees"<<endl;
+else cout<<d<<" days -> Membership cancelled."<<endl;
 }
-else if(days>10)
-{
-cout<<"Fine: 5 rupees"<<endl;
-}
-else if(days>=6)
-{
-cout<<"Fine: 1 rupee"<<endl;
-}
-else if(days>=1)
-{
-cout<<"Fine: 50 paise"<<endl;
-}
-else
-{
-cout<<"No fine."<<endl;
-}
-return 0;
 }
 
 //Q9
-int q9()
-{
-float a,b;
-int ch;
-cout<<"1.Add 2.Subtract 3.Multiply 4.Divide"<<endl;
-cout<<"Enter choice: ";
-cin>>ch;
-cout<<"Enter two numbers: ";
-cin>>a>>b;
-switch(ch)
-{
-case 1:
-cout<<"Result: "<<a+b<<endl;
-break;
-case 2:
-cout<<"Result: "<<a-b<<endl;
-break;
-case 3:
-cout<<"Result: "<<a*b<<endl;
-break;
-case 4:
-cout<<"Result: "<<a/b<<endl;
-break;
-default:
-cout<<"Invalid choice"<<endl;
+void q9(){
+int choice,a,b;
+cout<<"enter choice (1=add 2=sub 3=mul 4=div): "; cin>>choice;
+cout<<"enter two numbers: "; cin>>a>>b;
+switch(choice){
+case 1: cout<<"Result: "<<a+b<<endl; break;
+case 2: cout<<"Result: "<<a-b<<endl; break;
+case 3: cout<<"Result: "<<a*b<<endl; break;
+case 4: if(b!=0) cout<<"Result: "<<a/b<<endl; else cout<<"Division by zero"<<endl; break;
+default: cout<<"invalid"<<endl;
 }
-return 0;
 }
 
 //Q10
-int q10()
-{
-int n;
-cout<<"Enter a number: ";
-cin>>n;
-if(n%2==0)
-{
-cout<<"Even (if-else)"<<endl;
-}
-else
-{
-cout<<"Odd (if-else)"<<endl;
-}
-string res = (n%2==0)?"Even":"Odd";
-cout<<res<<" (conditional operator)"<<endl;
-return 0;
+void q10(){
+int n; cout<<"enter a number: "; cin>>n;
+if(n%2==0) cout<<"Even (if-else)"<<endl;
+else cout<<"Odd (if-else)"<<endl;
+cout<<((n%2==0)?"Even":"Odd")<<" (conditional operator)"<<endl;
 }
 
-int main()
-{
+int main(){
 int choice;
-cout<<"Enter question number (1-10): ";
-cin>>choice;
-switch(choice)
-{
+cout<<"enter question number (1-10): "; cin>>choice;
+switch(choice){
 case 1: q1(); break;
 case 2: q2(); break;
 case 3: q3(); break;
@@ -185,7 +107,7 @@ case 7: q7(); break;
 case 8: q8(); break;
 case 9: q9(); break;
 case 10: q10(); break;
-default: cout<<"Invalid"<<endl;
+default: cout<<"invalid"<<endl;
 }
 return 0;
 }
